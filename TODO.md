@@ -1,0 +1,5 @@
+- [x] - Add emotion library
+- [x] - Create an app.js file, seperating the components into their own files.
+- [x] - Convert the class components into functional component
+- [ ] - build the nav component. 
+    - [ ] - Make it sticky

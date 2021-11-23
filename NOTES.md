@@ -1,0 +1,1 @@
+- Updated the index.html to contain ``<meta name="viewport" content="width=device-width, initial-scale=1" />``. It is an important factor for responsiveness in modern websites. 
