@@ -48,7 +48,7 @@ const StyledNavbar = styled.div`
     ${media.phone`
       grid-row: 2/-1;
       grid-column: 1/-1;
-      margin-top: 1.5rem
+      margin-bottom: 3.5rem;
     `}
   }
 `;
