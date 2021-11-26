@@ -43,7 +43,7 @@ const StyledHero = styled.div`
       font-weight: 600;
       ${media.tablet`width: 60%`};
       ${media.phablet`width: 80%`};
-      ${media.phone`width: 100%`};
+      ${media.phone`width: 100%; font-size: 5rem`};
     }
 
     .hero-description {
@@ -53,8 +53,11 @@ const StyledHero = styled.div`
 
     .cta {
       margin-top: 4rem;
-      button {
+      ${media.phone`margin-top: 2.5rem;`};
+      & > button {
         padding: 1.25rem 2.5rem;
+        background-color: transparent;
+        color: #343435;
         cursor: pointer;
         font-weight: 600;
         text-transform: uppercase;

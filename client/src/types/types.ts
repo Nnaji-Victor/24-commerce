@@ -14,7 +14,8 @@ export type Article = {
 
 export type ChildCategory = {
   name: string
-  urlPath: string
+  urlPath: string,
+  image: string,
 }
 
 export type Prices = {
@@ -38,3 +39,5 @@ export type InputProps = {
   label? : string,
   id: string,
 }
+
+

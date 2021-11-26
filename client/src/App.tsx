@@ -10,8 +10,10 @@ const App: React.FC = () => {
     <StyledApp className="grid">
       <Navbar />
       <Hero />
-      <Sidebar />
-      <ProductList />
+      <div className="main-content">
+        <Sidebar />
+        <ProductList />
+      </div>
     </StyledApp>
   );
 };
@@ -23,6 +25,10 @@ const StyledApp = styled.main`
 
   & .fluid {
     grid-column: 1/-1;
+  }
+
+  .main-content{
+    margin-top: 6.5rem;
   }
 `;
 

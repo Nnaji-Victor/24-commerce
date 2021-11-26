@@ -9,13 +9,15 @@ const Navbar: React.FC = () => {
     console.log(val);
   };
   return (
-    <StyledNavbar className="">
-      <div className="brand-logo">home24</div>
-      <div className="search-container">
-        <Input id="search" onSubmit={submit} />
-      </div>
-      <div className="cart-nav">
-        <CartNav />
+    <StyledNavbar className="fluid grid">
+      <div className="nav-content">
+        <div className="brand-logo">home24</div>
+        <div className="search-container">
+          <Input id="search" onSubmit={submit} />
+        </div>
+        <div className="cart-nav">
+          <CartNav />
+        </div>
       </div>
     </StyledNavbar>
   );
@@ -23,9 +25,11 @@ const Navbar: React.FC = () => {
 
 const StyledNavbar = styled.div`
   min-height: 7.4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 3;
+
   ${media.phone`
     display: grid;
     min-height: 8rem;
@@ -33,23 +37,29 @@ const StyledNavbar = styled.div`
     grid-template-columns: 1fr 1fr;
   `}
 
-  .brand-logo{
-    font-size: 3rem;
-    font-weight: 600;
-  }
+  .nav-content {
+    grid-column: 2/-2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .brand-logo {
+      font-size: 3rem;
+      font-weight: 600;
+    }
 
-  .cart-nav {
-    ${media.phone`
+    .cart-nav {
+      ${media.phone`
       justify-self: end
     `}
-  }
+    }
 
-  .search-container {
-    ${media.phone`
+    .search-container {
+      ${media.phone`
       grid-row: 2/-1;
       grid-column: 1/-1;
       margin-bottom: 3.5rem;
     `}
+    }
   }
 `;
 

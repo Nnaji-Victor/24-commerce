@@ -1,4 +1,5 @@
 import * as React from "react";
+import useSafeDispatch from './useSafeDispatch';
 
 type AsyncState<D> =
   | {
@@ -77,17 +78,19 @@ function useAsync<T>() {
     error: null,
   });
 
+  const safeDispatch = useSafeDispatch(dispatch);
+
   const run = React.useCallback((promise: Promise<T>) => {
-    dispatch({ type: "pending", promise });
+    safeDispatch({ type: "pending", promise });
     promise.then(
       (data) => {
-        dispatch({ type: "resolved", data, promise });
+        safeDispatch({ type: "resolved", data, promise });
       },
       (error) => {
-        dispatch({ type: "rejected", error, promise });
+        safeDispatch({ type: "rejected", error, promise });
       }
     );
-  }, []);
+  }, [safeDispatch]);
 
   return {
     error,

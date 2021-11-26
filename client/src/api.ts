@@ -32,31 +32,31 @@ export const getProducts = async () => {
     try {
         const response = await makeRequest.post('', {
             query: `{
-            categories(ids: "1561267", locale: de_DE) {
-                name
-                articleCount
-            categoryArticles(first: 50) {
-            articles {
-                name
-                variantName
-                prices {
-                currency
-                regular {
-                    value
+                categories(ids: "156126", locale: de_DE) {
+                  name
+                  articleCount
+                  categoryArticles(first: 50) {
+                    articles {
+                      name
+                      variantName
+                      prices {
+                        currency
+                        regular {
+                          value
+                        }
+                      }
+                      images(
+                        format: WEBP
+                        maxWidth: 200
+                        maxHeight: 200
+                        limit: 1
+                      ) {
+                        path
+                      }
+                    }
+                  }
                 }
-                }
-                images(
-                format: WEBP
-                maxWidth: 200
-                maxHeight: 200
-                limit: 1
-                ) {
-                path
-                }
-            }
-            }
-        }
-        }`,
+              }`,
         })
 
         return response.data

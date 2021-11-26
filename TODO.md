@@ -2,4 +2,10 @@
 - [x] - Create an app.js file, seperating the components into their own files.
 - [x] - Convert the class components into functional component
 - [ ] - build the nav component. 
-    - [ ] - Make it sticky
+    - [x] - Make it sticky
+ - [x] - add useAsync for API calls
+ - [x] - add carousel for categories
+ - [x] - add product list and product card
+    - [x] - responsiveness
+
+ - [ ] - add error messages
